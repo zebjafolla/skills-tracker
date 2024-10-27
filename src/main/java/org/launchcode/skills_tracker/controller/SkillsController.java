@@ -33,13 +33,13 @@ public class SkillsController {
     @GetMapping("form")
     @ResponseBody
     public String renderList() {
-        return "<form method='post' action='/'>" +
+        return "<form method='post' action='/poster'>" +
                 "<label>Name: " +
                 "<input  type='text' name='name'/>" +
                 "</label>" +
                 "<br>" +
                 "<label>Please select a format option: </label>" +
-                "<select name='formatChoice' type='dropdown'>" +
+                "<select name='formatChoice'>" +
                 "<option value='table'>Table</option>" +
                 "<option value='ordered list'>Ordered List</option>" +
                 "</select>" +
@@ -98,7 +98,7 @@ public class SkillsController {
     }
 
 
-    @PostMapping("form")
+    @PostMapping("poster")
     @ResponseBody
     public String choices(@RequestParam String name,
                           @RequestParam String formatChoice,
